@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content='width=device-width, initial-scale=1.0'>
+  <title>FreelanceHub</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<nav class="topNav">
+  <div class="logoText">FreelanceHub</div>
+    <div class="linksWrap">
+      <a href="#" id="homeLink">Home</a>
+    <a href="#" id='servicesLink'>Services</a>
+      <a href="#" id="dashboardLink">Dashboard</a>
+    </div>
+</nav>
+<br>
+<section id="homePage">
+  <div class="heroBox">
+   <h1>Find freelancers fast for your next project</h1>
+   <p>Design, writing, dev, marketing and video gigs in one place.</p>
+      <button id="browseBtn" class="btn-primary">Browse Services</button>
+  </div>
+</section>
+
+<section id="servicesPage">
+   <h2>Services</h2>
+   <div class="servicesLayout">
+    <div class="serviceControls">
+      <div class="searchArea">
+        <input type="text" id="searchInput" placeholder="Search by title">
+         <button id="searchBtn" class="btn-primary">Search</button>
+      </div>
+      <div class="filterBar">
+       <select id="categorySelect">
+         <option value="">All Categories</option>
+         <option value="Design">Design</option>
+         <option value="Writing">Writing</option>
+         <option value="Development">Development</option>
+         <option value='Marketing'>Marketing</option>
+         <option value="Video">Video</option>
+       </select>
+       <input id="minPrice" type='number' placeholder="Min Price">
+     <input id="maxPrice" type="number" placeholder='Max Price'>
+       <input id="minRating" type="number" step="0.1" placeholder="Min Rating">
+      <select id="sortSelect">
+         <option value="">No Sort</option>
+         <option value="price_asc">Price low-high</option>
+         <option value="price_desc">Price high-low</option>
+         <option value="rating_desc">Rating</option>
+       </select>
+         <button id="applyFilters" class="btn-secondary">Apply Filters</button>
+      </div>
+    </div>
+    <div class="servicesContent">
+      <div class="resultsTop">
+        <p>Browse gigs and click view for details.</p>
+      </div>
+      <div id="serviceGrid"></div>
+    </div>
+  </div>
+</section>
+
+<section id="detailPage">
+   <div id="detailContent"></div>
+   <div class="detailBtns">
+      <button id="backBtn" class="btn-secondary">Back</button>
+      <button id="saveBtnTop" class="btn-primary">Save Service</button>
+      <button id="hireBtnTop" class="btn-danger">Hire Service</button>
+   </div>
+</section>
+
+<section id="dashboardPage">
+    <h2>Your Dashboard</h2>
+    <div class="tabWrap">
+      <button id="savedTab" class="tab-btn active">Saved</button>
+      <button id="hiredTab" class='tab-btn'>Hired</button>
+    </div>
+    <div id="savedList"></div>
+    <div id="hiredList"></div>
+</section>
+
+<div id="myModal" class="modal-overlay">
+  <div class="modal-box">
+    <p id="modalMsg"></p>
+    <button id='modalClose'>OK</button>
+  </div>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/ui.js"></script>
+<script src='/js/main.js'></script>
+</body>
+</html>
